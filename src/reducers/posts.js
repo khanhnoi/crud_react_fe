@@ -8,7 +8,8 @@ const posts = (posts = initPosts, action) => {
       return allPosts;
       break;
     case types.CREATE_POST:
-      return posts;
+      const post = action.payload;
+      return { ...posts, post };
       break;
 
     default:
